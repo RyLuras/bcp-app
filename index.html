@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        #result {
+            margin: 10px;
+            padding: 10px;
+            border: 3px;
+            
+        }
+    </style>
 </head>
 <body>
     <h1>On a new Branch homie.</h1>
@@ -60,14 +68,26 @@
         <input id="input-number" type="number" value="4">
 
         <button onclick="getSquare()">Get Square</button>
-
+        <div id="result"></div>
         <script>
             function getSquare() {
+                 //get the 
                  var input = document.getElementById('input-number');
+                 //get the 
                  var power = document.querySelector('input[name=power]:checked');
-                var exponent = power.value;
+                 //get the value out of the radio button
+                 var exponent = power.value;
+                 //
                  var x = input.value;
-                 var answer = Math.pow(x, power.value)
+                 //calculate the answer
+                 var answer = Math.pow(x, exponent)
+                 //get the result div
+                 var result = document.getElementById('result')
+                //write the response to the div
+                 result.innerHTML =  x + ' to the ' + exponent + ' is ' + answer;
+                 
+                 result.style.color = 'white';
+                 result.style.background = 'red';
                  console.log(x, 'to the', exponent, 'is', answer);
             }
 
